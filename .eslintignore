@@ -1,0 +1,16 @@
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/templates/**
+/tests/bench/**
+/tests/fixtures/**
+/tests/performance/**
+/tmp/**
+*.test.js
+!.eslintrc.js
+/.elasticbeanstalk/**
+/.ebextensions/**
+/node_modules/**
+*.d.ts
+*.js
