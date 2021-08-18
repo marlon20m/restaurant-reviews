@@ -1,30 +1,31 @@
-import React, { useEffect, Suspense, lazy, useState } from 'react';
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+// import React, { useEffect, Suspense, lazy, useState } from 'react';
+// import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+// import List from '../views/List';
+// import Detail from '../views/Detail';
 
-const List = lazy(() => import('../views/List'));
-const Detail = lazy(() => import('../views/List'));
+// export enum ROUTES {
+//   LIST = '/',
+//   DETAIL = '/detail',
+// }
 
-export enum ROUTES {
-  LIST = '/',
-  DETAIL = '/detail',
-}
+// const AppRoutes = () => {
 
-const AppRoutes = () => {
+//   const renderRoutes = () => {
+//     let routes: JSX.Element;
 
-  const renderRoutes = () => {
-    let routes: JSX.Element;
+//     routes = (
+//       <Routes>
+//         <Route path={ROUTES.LIST} element={ } />
+//         <Route path={ROUTES.DETAIL} element={ } />
+//       </Routes>
+//     );
 
-    routes = (
-      <Routes>
-        <Route path={ROUTES.LIST} element={ } />
-        <Route path={ROUTES.DETAIL} element={ } />
-      </Routes>
-    );
+//     return routes;
+//   };
 
-    return routes;
-  };
+//   return renderRoutes();
+// };
 
-  return renderRoutes();
-};
+// export default AppRoutes;
 
-export default AppRoutes;
+export { }
