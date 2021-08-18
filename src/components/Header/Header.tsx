@@ -1,29 +1,29 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { createStyles, makeStyles } from '@material-ui/styles';
+import { AppBar, Theme, Toolbar, Typography } from '@material-ui/core';
 import { alpha, useTheme, experimentalStyled as styled } from '@material-ui/core/styles';
 
 const RootStyle = styled('div')(({ theme }) => ({
-  flexGrow: 100,
+  backgroundColor: '#ffffff',
 }));
 
-const useStyles = makeStyles((theme) => ({
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 40,
-  },
-}));
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    title: {
+      fontSize: '20px',
+    },
+  }),
+);
 
 const Header = () => {
   const classes = useStyles();
-  const theme = useTheme();
   return (
     <RootStyle>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h5" style={{
+            fontWeight: 700, marginLeft: '105px',
+          }}>
             Reviews
           </Typography>
         </Toolbar>
