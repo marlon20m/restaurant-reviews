@@ -1,11 +1,11 @@
 import React from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { AppBar, Theme, Toolbar, Typography } from '@material-ui/core';
-import { alpha, useTheme, experimentalStyled as styled } from '@material-ui/core/styles';
+import { createStyles, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { varFadeInLeft, MotionInView } from '../animate/index';
 
-const RootStyle = styled('div')(({ Theme }) => ({
-
+const RootStyle = styled('div')(({ theme }) => ({
+  padding: theme.spacing(1, 1),
+  backgroundSize: 'contain',
 }));
 
 const useStyles = makeStyles((Theme) =>
