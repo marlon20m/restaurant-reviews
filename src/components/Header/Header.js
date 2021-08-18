@@ -28,7 +28,7 @@ const useStyles = makeStyles((Theme) =>
         fontSize: '28px',
       },
       [Theme.breakpoints.up('xl')]: {
-        padding: Theme.spacing(10),
+        padding: Theme.spacing(9),
         fontSize: '30px',
       },
     },
