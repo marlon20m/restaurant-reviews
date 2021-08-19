@@ -1,58 +1,58 @@
 import React from 'react';
+import { Grid, Paper, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { varFadeInLeft, MotionInView } from '../animate/index';
+import Rating from '@material-ui/lab/Rating';
 
 const RootStyle = styled('div')(({ theme }) => ({
-  padding: theme.spacing(1, 1),
-  backgroundSize: 'contain',
+  marginTop: '40px',
+  padding: '1px'
 }));
 
 const useStyles = makeStyles((Theme) =>
   createStyles({
-    title: {
-      [Theme.breakpoints.between('xs', 'sm')]: {
-        padding: Theme.spacing(1),
-        fontSize: '22px',
-      },
-      [Theme.breakpoints.between('sm', 'md')]: {
-        padding: Theme.spacing(3),
-        fontSize: '24px',
-      },
-      [Theme.breakpoints.between('md', 'lg')]: {
-        padding: Theme.spacing(5),
-        fontSize: '26px',
-      },
-      [Theme.breakpoints.between('lg', 'xl')]: {
-        padding: Theme.spacing(7),
-        fontSize: '28px',
-      },
-      [Theme.breakpoints.up('xl')]: {
-        padding: Theme.spacing(9),
-        fontSize: '30px',
-      },
+    paper: {
+      textAlign: 'left',
+      height: '100%',
+      borderRadius: '25px',
+    },
+    gridContainer: {
+      display: 'flex',
+      alignItems: 'center',
+      height: '100%',
     },
   }),
 );
-
-const Card = () => {
+const Card = ({
+  id, author, place, published_at, rating, content
+}) => {
   const classes = useStyles();
   return (
-    <RootStyle>
-      <AppBar position="static">
-        <Toolbar>
-          <MotionInView variants={varFadeInLeft}>
-            <Typography variant sx={{
-              marginLeft: '60px',
-              fontWeight: 700,
-            }} className={classes.title}>
-              Reviews
+    <Paper className={classes.paper} elevation={4} sx={{ padding: '10px 10px' }} >
+      <Grid container className={classes.gridContainer}>
+        <Grid item xs={9}>
+          <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+            {place}
+          </Typography>
+          <Typography variant='h5'>
+            <Rating name='read-only-rating' value={rating} readOnly />
+          </Typography>
+          <br />
+          <Typography noWrap variant='subtitle1'>
+            {content}
+          </Typography>
+          <br />
+          <br />
+          <br />
+          <br />
+          <RootStyle>
+            <Typography variant='subtitle2' >
+              {author}
             </Typography>
-          </MotionInView>
-        </Toolbar>
-      </AppBar>
-    </RootStyle>
+          </RootStyle>
+        </Grid>
+      </Grid>
+    </Paper >
   );
-}
+};
 
 export default Card;
