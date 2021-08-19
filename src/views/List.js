@@ -19,33 +19,6 @@ const RootStyle = styled('div')(({ theme }) => ({
   },
 }));
 
-const useStyles = makeStyles((Theme) =>
-  createStyles({
-    title: {
-      fontSize: '80px',
-      [Theme.breakpoints.between(0, 320)]: {
-        fontSize: '27px',
-      },
-      [Theme.breakpoints.between(321, 480)]: {
-        fontSize: '32px',
-      },
-      [Theme.breakpoints.between(480, 601)]: {
-        fontSize: '40px',
-      },
-      [Theme.breakpoints.between(601, 654)]: {
-        fontSize: '55px',
-      },
-      [Theme.breakpoints.between(654, 961)]: {
-        fontSize: '60px',
-      },
-      [Theme.breakpoints.between(961, 1194)]: {
-        fontSize: '62px',
-      },
-      fontWeight: 1000,
-    },
-  }),
-);
-
 // ----------------------------------------------------------------------
 
 const REVIEW_DATA = [
@@ -254,14 +227,13 @@ const REVIEW_DATA = [
 // ----------------------------------------------------------------------
 
 const List = () => {
-  const classes = useStyles();
 
   return (
     <RootStyle>
       <Container maxWidth='xl' sx={{ position: 'relative', height: '100%', width: '97%' }}>
         <MotionInView variants={varFadeInUp}>
           <Grid container>
-            {REVIEW_DATA.map(({ id, author, place, published_at, rating, content }, index,) => (<Grid item xs={12} sm={12} md={4} lg={4} key={id + index} sx={{ padding: '37px 74px 37px' }}>
+            {REVIEW_DATA.map(({ id, author, place, published_at, rating, content }, index,) => (<Grid item xs={12} sm={12} md={6} lg={4} key={id + index} sx={{ padding: '38px 76px 86px' }}>
               <Card id={id} author={author} place={place} published_at={published_at} rating={rating} content={content} /></Grid>))}
           </Grid>
         </MotionInView>
