@@ -41,7 +41,7 @@ const Header = () => {
     <AppBar position="static">
       <Toolbar>
         <MotionInView variants={varFadeInLeft}>
-          <Typography variant sx={{
+          <Typography variant='' sx={{
             marginLeft: '60px',
             fontWeight: 700,
           }} className={classes.title}>
