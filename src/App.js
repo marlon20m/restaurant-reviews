@@ -4,9 +4,6 @@ import Header from './components/Header/Header';
 import List from './views/List';
 import Detail from './views/Detail';
 
-
-
-
 function App() {
   return (
     <Router>

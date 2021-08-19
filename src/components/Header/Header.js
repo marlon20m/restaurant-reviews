@@ -4,6 +4,8 @@ import createStyles from '@material-ui/styles/createStyles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { varFadeInLeft, MotionInView } from '../Animate/index';
 
+// ----------------------------------------------------------------------
+
 const useStyles = makeStyles((Theme) =>
   createStyles({
     title: {
@@ -30,6 +32,8 @@ const useStyles = makeStyles((Theme) =>
     },
   }),
 );
+
+// ----------------------------------------------------------------------
 
 const Header = () => {
   const classes = useStyles();
