@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import { createStyles, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
@@ -28,6 +29,9 @@ const Card = ({
   id, author, place, published_at, rating, content
 }) => {
   const classes = useStyles();
+
+  let date = moment(published_at, 'ddd MMM DD YYYY HH:mm:ss zz-ZZ zz').format('MM/DD/YYYY')
+
   return (
     <Paper className={classes.paper} elevation={4} sx={{ padding: '10px 10px' }} >
       <Grid container className={classes.gridContainer}>
@@ -51,7 +55,7 @@ const Card = ({
               {author}
             </Typography>
             <Typography variant='subtitle2' >
-              {author}
+              {date}
             </Typography>
           </RootStyle>
         </Grid>
