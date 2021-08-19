@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Grid, Container } from '@material-ui/core';
-import { varFadeInUp, MotionInView } from '../components/animate/index';
+import { varFadeInUp, MotionInView } from '../components/Animate/index';
 import Card from '../components/Card/Card';
 import REVIEW_DATA from '../data/reviews.json'
 

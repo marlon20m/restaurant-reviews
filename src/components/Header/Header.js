@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import createStyles from '@material-ui/styles/createStyles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { varFadeInLeft, MotionInView } from '../animate/index';
+import { varFadeInLeft, MotionInView } from '../Animate/index';
 
 const useStyles = makeStyles((Theme) =>
   createStyles({
