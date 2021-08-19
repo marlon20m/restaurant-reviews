@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createStyles, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Grid, Container, Typography } from '@material-ui/core';
 import { varFadeInUp, MotionInView } from '../components/animate/index';
@@ -228,14 +228,15 @@ const REVIEW_DATA = [
 
 const Detail = () => {
 
+  const [cardId, setCardId] = useState();
+
   return (
     <RootStyle>
       <Container maxWidth='xl' sx={{ position: 'relative', height: '100%', width: '97%' }}>
         <MotionInView variants={varFadeInUp}>
-          {/* <Grid container>
-            {REVIEW_DATA.map(({ id, author, place, published_at, rating, content }, index,) => (<Grid item xs={12} sm={12} md={6} lg={4} key={id + index} sx={{ padding: '38px 76px 86px' }}>
-              <Card id={id} author={author} place={place} published_at={published_at} rating={rating} content={content} /></Grid>))}
-          </Grid> */}
+          <Grid container>
+            {REVIEW_DATA.values(({ id, author, place, published_at, rating, content }, index,) => (<Grid item xs={12} sm={12} md={6} lg={4} key={id + index} sx={{ padding: '38px 76px 86px' }}>
+              <Card id={id[index]} author={author[index]} place={place[index]} published_at={published_at[index]} rating={rating[index]} content={content[index]} /></Grid>))}          </Grid>
         </MotionInView>
       </Container>
     </RootStyle>
