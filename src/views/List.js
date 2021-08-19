@@ -261,7 +261,7 @@ const List = () => {
       <Container maxWidth='xl' sx={{ position: 'relative', height: '100%', width: '97%' }}>
         <MotionInView variants={varFadeInUp}>
           <Grid container>
-            {REVIEW_DATA.map(({ id, author, place, published_at, rating, content }, index,) => (<Grid item xs={12} sm={8} md={4} lg={4} key={id + index} sx={{ padding: '37px 74px 37px' }}>
+            {REVIEW_DATA.map(({ id, author, place, published_at, rating, content }, index,) => (<Grid item xs={12} sm={12} md={4} lg={4} key={id + index} sx={{ padding: '37px 74px 37px' }}>
               <Card id={id} author={author} place={place} published_at={published_at} rating={rating} content={content} /></Grid>))}
           </Grid>
         </MotionInView>

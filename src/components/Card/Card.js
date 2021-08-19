@@ -5,7 +5,9 @@ import Rating from '@material-ui/lab/Rating';
 
 const RootStyle = styled('div')(({ theme }) => ({
   marginTop: '40px',
-  padding: '1px'
+  padding: '1px',
+  display: 'flex',
+  justifyContent: 'space-between'
 }));
 
 const useStyles = makeStyles((Theme) =>
@@ -45,6 +47,9 @@ const Card = ({
           <br />
           <br />
           <RootStyle>
+            <Typography variant='subtitle2' >
+              {author}
+            </Typography>
             <Typography variant='subtitle2' >
               {author}
             </Typography>
