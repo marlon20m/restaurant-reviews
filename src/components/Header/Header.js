@@ -1,12 +1,8 @@
 import React from 'react';
-import { createStyles, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+import createStyles from '@material-ui/styles/createStyles';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { varFadeInLeft, MotionInView } from '../animate/index';
-
-const RootStyle = styled('div')(({ theme }) => ({
-  padding: theme.spacing(1, 1),
-  backgroundSize: 'contain',
-}));
 
 const useStyles = makeStyles((Theme) =>
   createStyles({
@@ -38,20 +34,18 @@ const useStyles = makeStyles((Theme) =>
 const Header = () => {
   const classes = useStyles();
   return (
-    <RootStyle>
-      <AppBar position="static">
-        <Toolbar>
-          <MotionInView variants={varFadeInLeft}>
-            <Typography variant sx={{
-              marginLeft: '60px',
-              fontWeight: 700,
-            }} className={classes.title}>
-              Reviews
-            </Typography>
-          </MotionInView>
-        </Toolbar>
-      </AppBar>
-    </RootStyle>
+    <AppBar position="static">
+      <Toolbar>
+        <MotionInView variants={varFadeInLeft}>
+          <Typography variant sx={{
+            marginLeft: '60px',
+            fontWeight: 700,
+          }} className={classes.title}>
+            Reviews
+          </Typography>
+        </MotionInView>
+      </Toolbar>
+    </AppBar>
   );
 }
 

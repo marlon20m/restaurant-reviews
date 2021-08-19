@@ -14,7 +14,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<List />} />
-          <Route path="/detail" exact element={<Detail />} />
+          <Route path="/detail/:id" exact element={<Detail />} />
         </Routes>
       </div>
     </Router>

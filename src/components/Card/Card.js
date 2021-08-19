@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
 import moment from 'moment';
-import { Grid, Paper, Typography, IconButton } from '@material-ui/core';
-import { createStyles, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
-import Rating from '@material-ui/lab/Rating';
+import { Grid, Paper, Typography, Rating } from '@material-ui/core';
+import { makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
+import createStyles from '@material-ui/styles/createStyles';
+
+// ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
   marginTop: '40px',
@@ -26,45 +27,46 @@ const useStyles = makeStyles((Theme) =>
     },
   }),
 );
-const Card = ({
-  id, author, place, published_at, rating, content
-}) => {
+
+// ----------------------------------------------------------------------
+
+const Card = ({ reviewData }) => {
+
   const classes = useStyles();
+
+  const { author, place, published_at, rating, content } = reviewData
 
   let date = moment(published_at, 'ddd MMM DD YYYY HH:mm:ss zz-ZZ zz').format('MM/DD/YYYY')
 
   return (
-    <Link to="/detail">
-      <Paper className={classes.paper} elevation={4} sx={{ padding: '10px 10px' }} onClick={() => {
-      }}>
-        <Grid container className={classes.gridContainer}>
-          <Grid item xs={9}>
-            <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-              {place}
+    <Paper className={classes.paper} elevation={4} sx={{ padding: '10px 10px' }} >
+      <Grid container className={classes.gridContainer}>
+        <Grid item xs={9}>
+          <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+            {place}
+          </Typography>
+          <Typography variant='h5'>
+            <Rating name='read-only-rating' value={rating} readOnly />
+          </Typography>
+          <br />
+          <Typography noWrap variant='subtitle1'>
+            {content}
+          </Typography>
+          <br />
+          <br />
+          <br />
+          <br />
+          <RootStyle>
+            <Typography variant='subtitle2' >
+              {author}
             </Typography>
-            <Typography variant='h5'>
-              <Rating name='read-only-rating' value={rating} readOnly />
+            <Typography variant='subtitle2' >
+              {date}
             </Typography>
-            <br />
-            <Typography noWrap variant='subtitle1'>
-              {content}
-            </Typography>
-            <br />
-            <br />
-            <br />
-            <br />
-            <RootStyle>
-              <Typography variant='subtitle2' >
-                {author}
-              </Typography>
-              <Typography variant='subtitle2' >
-                {date}
-              </Typography>
-            </RootStyle>
-          </Grid>
+          </RootStyle>
         </Grid>
-      </Paper>
-    </Link>
+      </Grid>
+    </Paper>
   );
 };
 
