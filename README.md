@@ -1,5 +1,5 @@
 # restaurant-reviews react
- Repo for Reviews on Various Restaurants with simple UI and animation
+ Repo for Reviews on Various Restaurants with simple UI and animation.
 
 # Usage
 Yarn Install
