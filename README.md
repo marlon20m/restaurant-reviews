@@ -1,5 +1,5 @@
-# review-trackers-challenge
-Private Repo for Review Trackers Challenge
+# restaurant-reviews react
+ Repo for Reviews on Various Restaurants Solid UI 
 
 # Usage
 Yarn Install
